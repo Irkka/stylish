@@ -12,5 +12,5 @@ function decorate(string, styles) {
     attribute_string = attribute_string ";" attributes[style_array[style]]
   }
 
-  { print escape_code(attribute_string) string escape_code(0) }
+  { print escape_code(attribute_string) string }
 }
