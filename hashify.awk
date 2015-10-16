@@ -5,7 +5,15 @@ function snakecase(string) {
   return string
 }
 
+BEGIN {
+  { print "declare -A unicode=( \\" }
+}
+
+END {
+  { print ")" }
+}
+
 // {
   if ($2 != "<control>")
-    print "\tunicode[\"" snakecase(tolower($2)) "\"] = \"" $1 "\""
+    print "[\'" snakecase(tolower($2)) "\']=\'" $1 "\' \\"
 }
